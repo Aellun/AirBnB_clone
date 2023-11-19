@@ -77,7 +77,7 @@ class TestReview_instantiation(unittest.TestCase):
         dt = datetime.today()
         dt_repr = repr(dt)
         rv = Review()
-        rv.id = "123456"
+        rv.id = "56789"
         rv.created_at = rv.updated_at = dt
         rvstr = rv.__str__()
         self.assertIn("[Review] (56789)", rvstr)
@@ -92,8 +92,8 @@ class TestReview_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        rv = Review(id="123", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(rv.id, "123")
+        rv = Review(id="567", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(rv.id, "567")
         self.assertEqual(rv.created_at, dt)
         self.assertEqual(rv.updated_at, dt)
 
@@ -193,10 +193,10 @@ class TestReview_to_dict(unittest.TestCase):
     def test_to_dict_output(self):
         dt = datetime.today()
         rv = Review()
-        rv.id = "123456"
+        rv.id = "56789"
         rv.created_at = rv.updated_at = dt
         tdict = {
-            'id': '123456',
+            'id': '56789',
             '__class__': 'Review',
             'created_at': dt.isoformat(),
             'updated_at': dt.isoformat(),

@@ -79,8 +79,8 @@ class TestState_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        st = State(id="345", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(st.id, "345")
+        st = State(id="567", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(st.id, "567")
         self.assertEqual(st.created_at, dt)
         self.assertEqual(st.updated_at, dt)
 
@@ -161,9 +161,9 @@ class TestState_to_dict(unittest.TestCase):
 
     def test_to_dict_contains_added_attributes(self):
         st = State()
-        st.middle_name = "Holberton"
+        st.middle_name = "Kenya"
         st.my_number = 98
-        self.assertEqual("Holberton", st.middle_name)
+        self.assertEqual("Kenya", st.middle_name)
         self.assertIn("my_number", st.to_dict())
 
     def test_to_dict_datetime_attributes_are_strs(self):
@@ -176,7 +176,7 @@ class TestState_to_dict(unittest.TestCase):
     def test_to_dict_output(self):
         dt = datetime.today()
         st = State()
-        st.id = "123456"
+        st.id = "56789"
         st.created_at = st.updated_at = dt
         tdict = {
             'id': '56789',

@@ -125,10 +125,10 @@ class TestPlace_instantiation(unittest.TestCase):
         dt = datetime.today()
         dt_repr = repr(dt)
         pl = Place()
-        pl.id = "123456"
+        pl.id = "56789"
         pl.created_at = pl.updated_at = dt
         plstr = pl.__str__()
-        self.assertIn("[Place] (203020)", plstr)
+        self.assertIn("[Place] (56789)", plstr)
         self.assertIn("'id': '56789'", plstr)
         self.assertIn("'created_at': " + dt_repr, plstr)
         self.assertIn("'updated_at': " + dt_repr, plstr)
@@ -140,8 +140,8 @@ class TestPlace_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
-        pl = Place(id="123", created_at=dt_iso, updated_at=dt_iso)
-        self.assertEqual(pl.id, "123")
+        pl = Place(id="567", created_at=dt_iso, updated_at=dt_iso)
+        self.assertEqual(pl.id, "567")
         self.assertEqual(pl.created_at, dt)
         self.assertEqual(pl.updated_at, dt)
 
@@ -152,7 +152,7 @@ class TestPlace_instantiation(unittest.TestCase):
 
 class TestPlace_save(unittest.TestCase):
     """Unittests save method of the class Place
-    includes setup and teardown for renaming file,jason to tmp
+    includes setup and teardown for renaming file,json to tmp
     and vice versa
     checks if:
             save updates the updated_at, the file.jason and raises the TypeError."""

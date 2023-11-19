@@ -80,11 +80,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
-        """Usage: create <class>
-        Create a new class instance and print its id.
-        if class name is missing, print class name missing
-        if class name does not exist print class does not exist
-        """
+        """Create a new class instance and print its id"""
         argl = parse(arg)
         if len(argl) == 0:
             print("** class name missing **")
@@ -95,14 +91,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_show(self, arg):
-        """Usage: show <class> <id> or <class>.show(<id>)
-        show the str rep of an instance based on the class name and id
-        if class name is missing print class name missing
-        if class name does not exist print class does not exist
-        if the id is missing print instance id is missing
-        if the istance of the class does nt exist for the
-        id print no istance found
-        """
+        """Display the string rep of a class instance of a given id"""
         argl = parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
@@ -118,13 +107,11 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
 
-        """Usage: destroy <class> <id> or <class>.destroy(<id>)
-        Delete a class instance of a given id
-        if the class name is missing print class name missing
-        if the class name does not exist print class does not exist
-        if the id is missing print the instance id is missing
-        if the istance of the class name does not exist for the id
-        print no instance found."""
+        """Delete a class instance of a given id."""
+        # if the class name is missing print class name missing
+        # if the class name does not exist print class does not exist
+        # if the id is missing print the instance id is missing
+        # if the istance ofname doesnt exist print no instance found
         argl = parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
@@ -140,9 +127,8 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_all(self, arg):
-        """Usage: all or all <class> or <class>.all()
-        prints all string representation of all instance based
-        if the class name does not exist prints class doesn't exist"""
+        """Display string rep of all instances of a given class"""
+        # if the class name does not exist prints class doesn't exist"""
         argl = parse(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
@@ -156,8 +142,7 @@ class HBNBCommand(cmd.Cmd):
             print(objl)
 
     def do_count(self, arg):
-        """Usage: count <class> or <class>.count()
-        Retrieve the number of instances of a given class."""
+        """Retrieve the number of instances of a given class."""
         argl = parse(arg)
         count = 0
         for obj in storage.all().values():
@@ -166,15 +151,12 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def do_update(self, arg):
-        """Usage: update <class> <id> <attribute_name> <attribute_value> or
-       <class>.update(<id>, <attribute_name>, <attribute_value>) or
-       <class>.update(<id>, <dictionary>)
-        Update a class instance of a given id by adding or updating
-        a given attribute key/value pair or dictionary.
-        take into consideration class name missing,
-        class name doesn't exists,id missing
-        istance of the class name doesn't exist for id,
-        the value of the attibute doesn't exist"""
+        """Update a class instance of a given id by updating dict"""
+        # a given attribute key/value pair or dictionary.
+        # take into consideration class name missing,
+        # class name doesn't exists,id missing
+        # istance of the class name doesn't exist for id,
+        # the value of the attibute doesn't exist"""
         argl = parse(arg)
         objdict = storage.all()
 

@@ -1,0 +1,1 @@
+all images for this website will be contained in this directory

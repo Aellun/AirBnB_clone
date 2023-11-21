@@ -1,6 +1,6 @@
 0x01. AirBnB clone - Web static
 
-this project focuses on thml and css -- the front end of the 
-previously build back end of the AirBNB clone project
+The Primary focus of this project is on HTML and CSS(the front-end) of the 
+previously built back-end of the AirBNB clone project which had  console interactive interface
 
 
